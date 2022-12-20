@@ -9,6 +9,7 @@ import Fantasy from "./Books/Fantasy/Fantasy";
 import Detective from "./Books/Detective/Detective";
 import Bestsellers from "./Books/Bestsellers/Bestsellers";
 import BookDetails from "./BookDetails/BookDetails";
+import BestsellerDetails from "./BookDetails/BestsellerDetails/BestsellerDetails";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         
         <Route path="/contact" element={<Contact />} />
         <Route path="/book/:id" element={<BookDetails/>} />
+        <Route path="/bestseller/:id" element={<BestsellerDetails />} />
       </Routes>
     </>
   );

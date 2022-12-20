@@ -1,0 +1,32 @@
+.details{
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.book-image img{
+    height: 25rem;
+}
+.book-image p{
+    font-size: 1.5rem;
+    font-weight:500;
+}
+
+.book-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.book-info .book-wrapper{
+   /* background-color: rgb(201, 201, 201); */
+   border: 1px solid #ccc;
+   width: 25rem;   
+   padding: 5px 10px;
+}
+.book-wrapper span{
+    font-weight:500;
+}
+.book-info p{
+    font-size: 1.3rem;
+}

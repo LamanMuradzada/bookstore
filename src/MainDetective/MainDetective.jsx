@@ -21,6 +21,7 @@ const MainDetective = () => {
 
       <div className="cards">
       {data.filter(items => items.genre === "Detective").slice(7, 12).map((item) => (
+         <Link to={`/book/${item.id}`} style={{ textDecoration: "none", color: "black" }} key={item.id}>
         <div key={item.id} className="card-wrapper">
           <div className="card-container">
              <img src={item.image} alt="" />
@@ -30,6 +31,7 @@ const MainDetective = () => {
           </div>
            
         </div>
+        </Link>
       ))}
         </div>
     

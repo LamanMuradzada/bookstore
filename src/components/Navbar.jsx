@@ -18,7 +18,7 @@ const Navbar = () => {
         <ul>
             {menus.map(menu =>(
               <>   
-                <Link to={ "/" + menu.key} className="pages">{menu.heading}</Link>
+                <Link to={ "/" + menu.key} className="pages" key={menu.key}>{menu.heading}</Link>
               </>
              
             ))
