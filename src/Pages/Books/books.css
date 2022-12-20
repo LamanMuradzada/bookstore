@@ -1,0 +1,30 @@
+.book-container{
+    
+    display: grid;
+    grid-template-columns: repeat(4,15%);
+    justify-content: center;
+    padding: 30px;
+    gap: 40px;
+}
+
+.options{
+    width: 230px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.card img{
+    object-fit: contain;
+    height: 230px;
+}
+
+
+.card h4{
+    font-size: 1.3rem;
+    text-align: center;
+}
