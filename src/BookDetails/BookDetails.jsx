@@ -4,6 +4,7 @@ import Api from "../utils/Api";
 import "./details.css";
 import Footer from '../Footer/Footer';
 import Search from '../SearchForm/Search';
+import "../FooterStyle/style.css"
 
 const BookDetails = () => {
   const {id} = useParams();
@@ -41,7 +42,7 @@ const BookDetails = () => {
             
           }
         </div>
-        <Footer />
+        <Footer className="all-footer"/>
     </>
   )
 }

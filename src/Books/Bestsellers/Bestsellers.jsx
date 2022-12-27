@@ -21,22 +21,20 @@ const Bestsellers = () => {
       <div className="title">
         <h5>Bestsellers</h5>
         <div className="line"></div>
-      </div>
+      </div>                                                 
       <div className="cards">
         {bestsellers.map((item) => (
-          <Link
-          to={`/bestseller/${item.id}`}
-          style={{ textDecoration: "none", color: "black" }} key={item.id}
-        >
-            <div key={item.id} className="card-wrapper">
-              <div className="card-container">
+          <div key={item.id} className="card-wrapper">
+            <div className="card-container">
+              <Link
+                to={`/bestseller/${item.id}`} key={item.id}>
                 <img src={item.image} alt="" />
-                <h3>{item.name}</h3>
-                <p>{item.author}</p>
-                <span>${item.price}</span>
-              </div>
+              </Link>
+              <h3>{item.name}</h3>
+              <p>{item.author}</p>
+              <span>${item.price}</span>
             </div>
-            </Link>
+          </div>
         ))}
       </div>
       <Footer />

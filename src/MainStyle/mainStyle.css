@@ -3,28 +3,31 @@
     grid-template-columns: repeat(5,14%);
     justify-content: center;
     padding: 30px;
-    gap: 40px;
+    gap: 50px;
     
     
   }
   
   .card-wrapper {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+    border: 1px solid #DEDEDE;
     width: 230px;
   }
   .card-wrapper:hover{
-    cursor: pointer;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    transition:  0.6s ease;
   }
   
   .card-wrapper img {
     object-fit: contain;
     height: 250px;
-  
+    width: 100%;
   }
   .card-wrapper .card-container{
       display: flex;
       flex-direction: column;
       padding: 5px;
+      align-self: normal;
   }
   
   .card-container h3 {

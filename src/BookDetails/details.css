@@ -1,14 +1,16 @@
 .details{
-    padding: 40px;
+    padding-top: 30px;
     display: flex;
     justify-content: space-around;
 }
 
 .book-image img{
-    height: 25rem;
+    height: 22rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    cursor: pointer;
 }
 .book-image p{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight:500;
 }
 
@@ -19,14 +21,14 @@
 }
 
 .book-info .book-wrapper{
-   /* background-color: rgb(201, 201, 201); */
    border: 1px solid #ccc;
-   width: 25rem;   
+   min-width: 25rem;   
    padding: 5px 10px;
 }
 .book-wrapper span{
+    font-size: 1.1rem;
     font-weight:500;
 }
 .book-info p{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }

@@ -10,8 +10,8 @@ const Navbar = () => {
     <>
     <div className='nav'>
       <Link to={"/"} className={"tohome"}>
-        <div className='logo' title='Fifteen Book'>
-          <img src={Logo} alt="logo" />
+        <div className='logo'>
+          <img src={Logo} alt="logo" title='Fifteen Book'/>
            <h1>Fifteen Book</h1>
         </div>
         </Link>

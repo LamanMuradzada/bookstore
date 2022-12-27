@@ -1,9 +1,9 @@
 import {BsInstagram, BsFacebook, BsTwitter} from 'react-icons/bs';
 
 const icons = [
-    {icon: <BsInstagram />},
-    {icon: <BsFacebook />},
-    {icon: <BsTwitter />},
+    {icon: <BsInstagram />, key: "ig"},
+    {icon: <BsFacebook />, key:"fb"},
+    {icon: <BsTwitter />, key: "tw"},
 ]
 
 export default icons

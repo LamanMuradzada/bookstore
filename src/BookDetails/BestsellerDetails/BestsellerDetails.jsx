@@ -4,6 +4,7 @@ import Api from "../../utils/Api";
 import "../details.css";
 import Search from "../../SearchForm/Search";
 import Footer from "../../Footer/Footer";
+import '../../FooterStyle/style.css';
 
 const BestsellerDetails = () => {
     const {id} = useParams();
@@ -40,7 +41,7 @@ const BestsellerDetails = () => {
               
             }
           </div>
-          <Footer />
+          <Footer className="all-footer" />
       </>
     )
 }

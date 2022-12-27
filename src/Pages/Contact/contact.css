@@ -1,57 +1,92 @@
-.contact-container{
-    height: 100%;
-    width: 100%;
-    padding: 50px 85px;
 
-}
-.contact-container > p{
-    font-size: 1.8rem;
-    font-weight: 600;
-}
-
-
-/* .our-info {
+.contact{
     display: flex;
     flex-direction: column;
-} */
-
-.icons{
-    display: flex;
     justify-content: space-between;
-    padding: 5px;
-    font-size: 1.5rem;
+    /* padding: 40px 0; */
+    padding-top: 40px;
+    height: 550px;
+}
+
+.contact .header{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header-text p{
+   padding-top: 20px;
+}
+
+.header-text > h3{
+     font-size: 2.6rem;
+     color: #211414;
+}
+
+.header-text img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
     cursor: pointer;
 }
-
-.icons li{
-    list-style-type: none; 
-}
-
-
-
-.info p{
+.header-text p{
     font-size: 1.1rem;
 }
 
-.contact-wrapper{
+.contact-footer{
     display: flex;
-    justify-content: space-between;
-    padding: 25px 0;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.contact-info{
+    display: flex;
+}
+
+.contact-info .text{
+    padding-top: 5px;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.icon{
+    font-size: 1.5rem;
+    color: #211414;
+}
+
+.contact-info .text p{
+    font-size: 1.2rem;
+}
+
+.contact-info .text h4{
+    font-size: 1.3rem;
+    /* color: #211414; */
 }
 
 .form form{
     display: flex;
     flex-direction: column;
     width: 30rem;
+    margin-top: 3rem;
 }
 
 .form input{
     outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 0.125rem solid silver;
+    width: 100%;
 }
-.form label{
+.form  label{
    font-size: 1.2rem;
-
+   color: grey;
 }
+
 .form button{
     width: 20%;
     margin: 0 auto;
@@ -59,11 +94,16 @@
     margin-top: 10px;
     /* background-color: #B03B31; */
     /* color: white; */
-    color: black;
-    background-color: rgba(150, 150, 150, 0.816);
+    color: #f0f0f0;
+    background-color: #211414;
     border: none;
+    border-radius: 4px;
 }
 .form textarea{
     outline: none;
     height: 6rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 0.125rem solid #adabab;
 }

@@ -10,28 +10,33 @@ import Detective from "./Books/Detective/Detective";
 import Bestsellers from "./Books/Bestsellers/Bestsellers";
 import BookDetails from "./BookDetails/BookDetails";
 import BestsellerDetails from "./BookDetails/BestsellerDetails/BestsellerDetails";
+import SearchResult from "./SearchForm/SearchResult/SearchResult";
 
 function App() {
   return (
-    <>
-      <div>
+    <div className="wrapper">
+     
         <Navbar />
-      </div>
+     
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/books" element={<Books />}/>
+        <Route path="/books" element={<Books />} />
 
         <Route path="/novel" element={<Novel />} />
         <Route path="/fantasy" element={<Fantasy />} />
         <Route path="/detective" element={<Detective />} />
         <Route path="/bestsellers" element={<Bestsellers />} />
-        
+
         <Route path="/contact" element={<Contact />} />
-        <Route path="/book/:id" element={<BookDetails/>} />
+
+        <Route path="/book/:id" element={<BookDetails />} />
         <Route path="/bestseller/:id" element={<BestsellerDetails />} />
+
+        <Route path="/result/:bookName" element={<SearchResult />} />
       </Routes>
-    </>
+
+    </div>
   );
 }
 

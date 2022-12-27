@@ -8,8 +8,7 @@ const MainBestsellers = () => {
 
   useEffect(() => {
     Api.get("/api/bestsellers").then((resp) => {
-      console.log(resp.data);
-      setData(resp.data);
+       setData(resp.data);
     }); 
   }, []);
 
@@ -20,19 +19,21 @@ const MainBestsellers = () => {
        </Link>
       <div className="cards">
       {data.slice(7, 12).map((item) => (
-        <Link
-        to={`/bestseller/${item.id}`}
-        style={{ textDecoration: "none", color: "black" }} key={item.id} className
-      >
+        
         <div key={item.id} className="card-wrapper">
           <div className="card-container">
+            <Link to={`/bestseller/${item.id}`} key={item.id}>
              <img src={item.image} alt="book's pic" />
+             </Link>
             <h3>{item.name}</h3>
             <p>{item.author}</p>
-            <span>${item.price}</span>
+            <div className="pr-bas">
+              <span>${item.price}</span>
+              
+            </div>
           </div>
         </div>
-        </Link>
+        
       ))}
         </div>
     </>

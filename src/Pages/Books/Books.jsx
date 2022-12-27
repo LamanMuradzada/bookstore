@@ -25,7 +25,7 @@ const Books = () => {
         </div>
         
       </div>
-        <Footer />
+        <Footer className="all-footer"/>
     </>
   );
 };
