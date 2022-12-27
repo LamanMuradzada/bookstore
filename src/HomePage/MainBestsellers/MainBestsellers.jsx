@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Title from "../Title/Title";
-import "../MainStyle/mainStyle.css"
-import Api from "../utils/Api";
+import Title from "../../Title/Title";
+import '../../MainStyle/mainStyle.css';
+import Api from "../../utils/Api";
 import { Link } from "react-router-dom";
 const MainBestsellers = () => {
   const [data, setData] = useState([]);

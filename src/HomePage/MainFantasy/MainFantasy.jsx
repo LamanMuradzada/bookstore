@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Title from "../Title/Title";
-import Api from "../utils/Api";
-import "../MainStyle/mainStyle.css";
+import Title from '../../Title/Title';
+import Api from "../../utils/Api";
+import "../../MainStyle/mainStyle.css";
 import { Link } from "react-router-dom";
 const MainFantasy = () => {
   const [data, setData] = useState([]);

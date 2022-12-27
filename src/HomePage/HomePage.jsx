@@ -1,6 +1,6 @@
 import React from 'react';
-import MainSlider from '../Slider/MainSlider';
-import Card from '../Card/Card';
+import MainSlider from './Slider/MainSlider';
+import Card from './Card/Card';
 import Search from '../SearchForm/Search';
 import Footer from '../Footer/Footer';
 
