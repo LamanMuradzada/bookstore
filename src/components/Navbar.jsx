@@ -19,10 +19,12 @@ const Navbar = () => {
             {menus.map(menu =>(
               <>   
                 <Link to={ "/" + menu.key} className="pages" key={menu.key}>{menu.heading}</Link>
+                <Link to={"/basket"} style={{color: "rgb(68, 67, 67)"}}><div className='basket-icon' title='Go to basket'>{menu.icon}</div></Link>
               </>
              
             ))
             }
+
         </ul>
     </div>
    </>

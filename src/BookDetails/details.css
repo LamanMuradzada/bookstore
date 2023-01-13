@@ -32,3 +32,15 @@
 .book-info p{
     font-size: 1.1rem;
 }
+
+.book-wrapper .cart-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-wrapper .cart-price .icon-cart{
+    font-size: 2rem;
+    color: rgb(192, 2, 2);
+    cursor: pointer;
+}

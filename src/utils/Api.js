@@ -4,15 +4,16 @@ const BASE_URL = "http://127.0.0.1:3000";
 
 // export const headers = new Headers({
 //   Accept: "application/json;charset=UTF-8",
-//   "Access-Control-Allow-Credentials": true,
+//   "Access-Control-Allow-Credentials": false,
 //   "Access-Control-Allow-Origin": "*",
 //   "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
 //   "Cache-Control": "max-age=20, min-fresh=15",
 // });
 
+
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
-//   headers: headers,
+  // headers: headers,
   mode: "cors",
 });
 

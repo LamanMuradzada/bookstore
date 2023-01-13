@@ -7,10 +7,10 @@ import Contact from "./Pages/Contact/Contact";
 import Novel from "./Books/Novel/Novel";
 import Fantasy from "./Books/Fantasy/Fantasy";
 import Detective from "./Books/Detective/Detective";
-import Bestsellers from "./Books/Bestsellers/Bestsellers";
+import History from "./Books/History/History";
 import BookDetails from "./BookDetails/BookDetails";
-import BestsellerDetails from "./BookDetails/BestsellerDetails/BestsellerDetails";
 import SearchResult from "./SearchForm/SearchResult/SearchResult";
+import Basket from "./Basket/Basket";
 
 function App() {
   return (
@@ -26,14 +26,15 @@ function App() {
         <Route path="/novel" element={<Novel />} />
         <Route path="/fantasy" element={<Fantasy />} />
         <Route path="/detective" element={<Detective />} />
-        <Route path="/bestsellers" element={<Bestsellers />} />
+        <Route path="/history" element={<History />} />
 
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/book/:id" element={<BookDetails />} />
-        <Route path="/bestseller/:id" element={<BestsellerDetails />} />
 
         <Route path="/result/:bookName" element={<SearchResult />} />
+
+        <Route path="/basket" element={<Basket />}/>
       </Routes>
 
     </div>

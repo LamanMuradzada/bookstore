@@ -22,6 +22,8 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     /* border: 2px solid #DEDEDE; */
     width: 230px;
+    height: 410px;
+  
   }
   .result-wrapper img:hover{
     cursor: pointer;
@@ -30,6 +32,7 @@
   .result-wrapper img {
     object-fit: contain;
     height: 250px;
+    width: 100%;
   
   }
   .result-wrapper .result-container{
@@ -47,3 +50,15 @@
     color: teal;
     padding: 5px;
   }
+
+  .result-container .price-cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+
+   .result-container .price-cart #basket-icon{
+        font-size: 1.9rem;
+        color: rgb(192, 2, 2);
+        cursor: pointer;
+   }

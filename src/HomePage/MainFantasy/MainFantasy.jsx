@@ -3,15 +3,20 @@ import Title from '../../Title/Title';
 import Api from "../../utils/Api";
 import "../../MainStyle/mainStyle.css";
 import { Link } from "react-router-dom";
+import icon from '../../Cart-icons/icons';
+
 const MainFantasy = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     Api.get("/").then((resp) => {
-      // console.log(resp.data);
       setData(resp.data);
     });
   }, []);
+
+  const addCart = (id) => {
+    Api.post(`/api/basketproduct/${id}`, id).then(() => {});
+  };
 
   return (
     <>
@@ -31,7 +36,12 @@ const MainFantasy = () => {
                 </Link>
                 <h3>{item.name}</h3>
                 <p>{item.author}</p>
+                <div className="price-cart">
                 <span>${item.price}</span>
+                 {icon.map(icon =>(
+                  <div key={icon.key} id="cart-icon" onClick={() =>{addCart(item.id)}}>{icon.icon}</div>
+                 ))}
+                </div>
               </div>
             </div>
           ))}

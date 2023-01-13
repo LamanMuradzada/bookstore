@@ -2,6 +2,9 @@ import React from 'react';
 import './mainSlider.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
+import img1 from './images/img1.jpg';
+import img2 from './images/img2.jpg';
+import img3 from './images/img3.jpg';
 
 const MainSlider = () => {
 
@@ -13,21 +16,21 @@ const MainSlider = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://dispatch.barnesandnoble.com/content/dam/ccr/homepage/daily/2022/12/06/25346_Quote_A1_BOTY_12-06.jpg"
+          src={img1}
           alt="First slide"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://dispatch.barnesandnoble.com/content/dam/ccr/homepage/daily/2022/03/09/Gateway_Quote_A1_03-09.jpg"
+          src={img2}
           alt="Second slide"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://dispatch.barnesandnoble.com/content/dam/ccr/homepage/daily/2022/12/06/25346_Quote_A3_12-06.jpg"
+          src={img3}
           alt="Third slide"
         />
       </Carousel.Item>

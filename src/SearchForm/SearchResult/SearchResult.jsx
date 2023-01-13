@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./result.css";
+import icon from '../../Cart-icons/icons';
 
 import Api from "../../utils/Api";
 import Footer from "../../Footer/Footer";
@@ -27,6 +28,7 @@ const SearchResult = () => {
     <>
       <Search />
       <div className={books.newFilter?.length > 1 ? "all-result" : "one-result"}>
+       {books?.newFilter?.length === 0 && <div>Book not found.</div>}
       {(books ? (books.newFilter ? books.newFilter : []) : []).map((book) => (
           <div className="result-wrapper" key={book.id}>
             <div className="result-container">
@@ -34,7 +36,12 @@ const SearchResult = () => {
               <p id="book-name">{book?.name}</p>
               <div className="au-pr">
               <p>{book?.author}</p>
-              <p>${book?.price}</p>
+              <div className="price-cart">
+                <span>${book.price}</span>
+                 {icon.map(icon =>(
+                  <div key={icon.key} id="basket-icon">{icon.icon}</div>
+                 ))}
+                </div>
               </div>
             </div>
         </div>

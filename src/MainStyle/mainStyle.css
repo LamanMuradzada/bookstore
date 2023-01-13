@@ -12,10 +12,12 @@
     /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
     border: 1px solid #DEDEDE;
     width: 230px;
+    background-color: #eefdfd63;
   }
   .card-wrapper:hover{
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     transition:  0.6s ease;
+    background-color: white;
   }
   
   .card-wrapper img {
@@ -26,7 +28,7 @@
   .card-wrapper .card-container{
       display: flex;
       flex-direction: column;
-      padding: 5px;
+      padding: 5px 10px;
       align-self: normal;
   }
   
@@ -35,6 +37,19 @@
     color: teal;
     padding: 5px;
   }
+
+   .card-container .price-cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+
+   .card-container .price-cart #cart-icon{
+        font-size: 1.9rem;
+        color: rgb(192, 2, 2);
+        cursor: pointer;
+   }
+
   
 .title h5{
   font-size: 2rem;
