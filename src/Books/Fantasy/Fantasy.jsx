@@ -6,9 +6,13 @@ import Search from "../../SearchForm/Search";
 import Footer from "../../Footer/Footer";
 import { Link } from "react-router-dom";
 import icon from '../../Cart-icons/icons';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const Fantasy = () => {
+  const notifyError = () => toast.error("Book has been already added!");
+  const notifySuccess = () => toast.success("Book added to the basket!");
   const [fantasy, setFantasy] = useState([]);
 
   useEffect(() => {
@@ -18,7 +22,14 @@ const Fantasy = () => {
   }, []);
 
   const addCart = (id) => {
-    Api.post(`/api/basketproduct/${id}`, id).then(() => {});
+    Api.post(`/api/basketproduct/${id}`, id).then((rsp) => {
+      console.log("hhhhh", rsp);
+      if (rsp.data.result === false) {
+        notifyError();
+      } else {
+        notifySuccess();
+      }
+    });
   };
   return (
     <>
@@ -47,6 +58,7 @@ const Fantasy = () => {
               </div>
             </div>
           ))}
+          <ToastContainer />
       </div>
       <Footer />
     </>

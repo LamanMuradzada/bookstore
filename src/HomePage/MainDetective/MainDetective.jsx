@@ -4,9 +4,12 @@ import Api from "../../utils/Api";
 import "../../MainStyle/mainStyle.css";
 import { Link } from "react-router-dom";
 import icon from '../../Cart-icons/icons';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const MainDetective = () => {
+  const notifyError = () => toast.error("Book has been already added!");
+  const notifySuccess = () => toast.success("Book added to the basket!");
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -16,7 +19,14 @@ const MainDetective = () => {
   }, []);
 
   const addCart = (id) => {
-    Api.post(`/api/basketproduct/${id}`, id).then(() => {});
+    Api.post(`/api/basketproduct/${id}`, id).then((rsp) => {
+      console.log("hhhhh", rsp);
+      if (rsp.data.result === false) {
+        notifyError();
+      } else {
+        notifySuccess();
+      }
+    });
   };
   return (
     <>
@@ -48,6 +58,7 @@ const MainDetective = () => {
               </div>
             </div>
           ))}
+          <ToastContainer />
       </div>
     </>
   );

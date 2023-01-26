@@ -5,10 +5,13 @@ import "../../MainStyle/mainStyle.css";
 import Search from "../../SearchForm/Search";
 import Footer from "../../Footer/Footer";
 import { Link } from "react-router-dom";
-import icon from '../../Cart-icons/icons';
-
+import icon from "../../Cart-icons/icons";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Detective = () => {
+  const notifyError = () => toast.error("Book has been already added!");
+  const notifySuccess = () => toast.success("Book added to the basket!");
   const [detective, setDetective] = useState([]);
 
   useEffect(() => {
@@ -18,7 +21,14 @@ const Detective = () => {
   }, []);
 
   const addCart = (id) => {
-    Api.post(`/api/basketproduct/${id}`, id).then(() => {});
+    Api.post(`/api/basketproduct/${id}`, id).then((rsp) => {
+      console.log("hhhhh", rsp);
+      if (rsp.data.result === false) {
+        notifyError();
+      } else {
+        notifySuccess();
+      }
+    });
   };
   return (
     <>
@@ -39,14 +49,23 @@ const Detective = () => {
                 <h3>{item.name}</h3>
                 <p>{item.author}</p>
                 <div className="price-cart">
-                <span>${item.price}</span>
-                 {icon.map(icon =>(
-                  <div key={icon.key} id="cart-icon" onClick={() =>{addCart(item.id)}}>{icon.icon}</div>
-                 ))}
+                  <span>${item.price}</span>
+                  {icon.map((icon) => (
+                    <div
+                      key={icon.key}
+                      id="cart-icon"
+                      onClick={() => {
+                        addCart(item.id);
+                      }}
+                    >
+                      {icon.icon}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           ))}
+        <ToastContainer />
       </div>
       <Footer />
     </>

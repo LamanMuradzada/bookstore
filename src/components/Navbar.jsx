@@ -13,18 +13,17 @@ const Navbar = () => {
         <div className='logo'>
           <img src={Logo} alt="logo" title='Fifteen Book'/>
            <h1>Fifteen Book</h1>
-        </div>
+        </div> 
         </Link>
         <ul>
             {menus.map(menu =>(
               <>   
                 <Link to={ "/" + menu.key} className="pages" key={menu.key}>{menu.heading}</Link>
-                <Link to={"/basket"} style={{color: "rgb(68, 67, 67)"}}><div className='basket-icon' title='Go to basket'>{menu.icon}</div></Link>
+                <Link to={"/basket"} style={{color: "rgb(68, 67, 67)"}}><div className='basket-icon' title='Go to basket'>{menu.icon}</div> </Link>
               </>
-             
-            ))
-            }
-
+               
+               ))
+              }
         </ul>
     </div>
    </>

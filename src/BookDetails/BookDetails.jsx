@@ -5,9 +5,13 @@ import "./details.css";
 import Footer from '../Footer/Footer';
 import Search from '../SearchForm/Search';
 import "../FooterStyle/style.css";
-import icon from '../Cart-icons/icons'
+import icon from '../Cart-icons/icons';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BookDetails = () => {
+  const notifyError = () => toast.error("Book has been already added!");
+  const notifySuccess = () => toast.success("Book added to the basket!");
   const {id} = useParams();
   const [book, setBook] = useState({});
 
@@ -21,7 +25,14 @@ const BookDetails = () => {
   }, [id]);
 
   const addCart = (id) => {
-    Api.post(`/api/basketproduct/${id}`, id).then(() => {});
+    Api.post(`/api/basketproduct/${id}`, id).then((rsp) => {
+      console.log("hhhhh", rsp);
+      if (rsp.data.result === false) {
+        notifyError();
+      } else {
+        notifySuccess();
+      }
+    });
   };
 
   return (
@@ -53,6 +64,7 @@ const BookDetails = () => {
             </>
             
           }
+          <ToastContainer />
         </div>
         <Footer className="all-footer"/>
     </>

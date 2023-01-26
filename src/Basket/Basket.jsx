@@ -4,12 +4,11 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { TiTimes } from "react-icons/ti";
 import { FaCcMastercard, FaCcVisa, FaCcPaypal } from "react-icons/fa";
 import Api from "../utils/Api";
-import Footer from '../Footer/Footer';
+import Footer from "../Footer/Footer";
 
 const Basket = () => {
   const [product, setProduct] = useState([]);
 
-  console.log("prodect", product);
   useEffect(() => {
     Api.get("/api/basketproduct").then((res) => {
       setProduct(res.data);
@@ -24,10 +23,44 @@ const Basket = () => {
   };
 
   const deleteItem = (id) => {
-    Api.delete(`http://127.0.0.1:3000/api/basketproduct/${id}`).then(() => {
-    });
+    Api.delete(`/api/basketproduct/${id}`).then(() => {});
     window.location.reload();
   };
+
+  const increaseCart = (id) => {
+    product?.map((item) => {
+      if (id === item.id) {
+        console.log("item id", item.id);
+        item.count += 1;
+        item.amount = parseFloat(item.price * item.count).toFixed(2);
+        setProduct([...product]);
+      }
+    });
+  };
+
+  const decreaseCart = (id) => {
+    product?.map((item) => {
+      if (id === item.id) {
+        if (item.count > 1) {
+          console.log("item id", item.id);
+          item.count -= 1;
+          item.amount = parseFloat(item.amount - item.price).toFixed(2);
+          setProduct([...product]);
+          if (item.count <= 1) {
+            item.count = 1;
+
+
+          }
+        }
+      }
+    });
+  };
+
+  let shipping = 7.28;
+  let tax = 0.0;
+
+  let subTotal = product.reduce((sum, product) => sum + product.price * product.count, 0).toFixed(2);
+  let total = (Number(subTotal) + shipping + tax).toFixed(2);
 
   return (
     <>
@@ -35,7 +68,7 @@ const Basket = () => {
         <h2>
           <span>Basket</span>
         </h2>
-      
+
         {product?.length !== 0 ? (
           <div className="shopping-cart">
             <div className="cart-body">
@@ -50,8 +83,8 @@ const Basket = () => {
               </div>
 
               <div className="cart-list">
-                {product.map((product) => (
-                  <div className="cart-item">
+                {product?.map((product) => (
+                  <div className="cart-item" key={product.id}>
                     <div className="delete">
                       <button
                         className="delete-btn"
@@ -82,15 +115,25 @@ const Basket = () => {
 
                     <div className="book-quantity amount">
                       <button className="book-button button-dec">
-                        <AiOutlineMinus />
+                        <AiOutlineMinus
+                          onClick={() => {
+                            decreaseCart(product.id);
+                          }}
+                        />
                       </button>
-                      <span className="span">1</span>
+                      <span className="span">{product.count}</span>
                       <button className="book-button button-in">
-                        <AiOutlinePlus />
+                        <AiOutlinePlus
+                          onClick={() => {
+                            increaseCart(product.id);
+                          }}
+                        />
                       </button>
                     </div>
                     <div className="book-quantity">
-                      <span>${product.price}</span>
+                      <span>
+                        ${product.amount === 0 ? product.price : product.amount}
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -161,20 +204,20 @@ const Basket = () => {
                 <h3 className="order-title">Order Summary</h3>
                 <div className="subtotal flex">
                   <span>Subtotal</span>
-                  <span>$57.00</span>
+                  <span>${subTotal}</span>
                 </div>
                 <div className="shipping flex">
                   <span>Shipping</span>
-                  <span>$7.28</span>
+                  <span>${shipping}</span>
                 </div>
                 <div className="tax flex">
                   <span>Estimated Tax</span>
-                  <span>$0.00</span>
+                  <span>${tax}</span>
                 </div>
                 <div className="line"></div>
                 <div className="total flex">
                   <span>Order Total:</span>
-                  <span>$64.28</span>
+                  <span>${total}</span>
                 </div>
 
                 <div className="order-btn">
@@ -188,7 +231,7 @@ const Basket = () => {
         )}
       </div>
 
-      <Footer className={product?.length !== 0 ? "footer" : "all-footer"}/>
+      <Footer className={product?.length !== 0 ? "" : "all-footer"} />
     </>
   );
 };

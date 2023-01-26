@@ -6,8 +6,12 @@ import icon from '../../Cart-icons/icons';
 import Api from "../../utils/Api";
 import Footer from "../../Footer/Footer";
 import Search from "../Search";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SearchResult = () => {
+  const notifyError = () => toast.error("Book has been already added!");
+  const notifySuccess = () => toast.success("Book added to the basket!");
   let { bookName } = useParams();
 
   const [books, setBooks] = useState([]);
@@ -24,6 +28,17 @@ const SearchResult = () => {
     });
   }, [bookName]);
 
+  const addCart = (id) => {
+    Api.post(`/api/basketproduct/${id}`, id).then((rsp) => {
+      console.log("hhhhh", rsp);
+      if (rsp.data.result === false) {
+        notifyError();
+      } else {
+        notifySuccess();
+      }
+    });
+  };
+
   return (
     <>
       <Search />
@@ -39,13 +54,14 @@ const SearchResult = () => {
               <div className="price-cart">
                 <span>${book.price}</span>
                  {icon.map(icon =>(
-                  <div key={icon.key} id="basket-icon">{icon.icon}</div>
+                  <div key={icon.key} id="basket-icon" onClick={() => {addCart(book.id)}}>{icon.icon}</div>
                  ))}
                 </div>
               </div>
             </div>
         </div>
       ))}
+      <ToastContainer />
       </div>
       <Footer className="all-footer"/>
     </>
