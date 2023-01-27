@@ -58,11 +58,11 @@ ul{
 }
 
 
-.basket-icon{
-    font-size: 1.8rem;
+.icon{
     margin-bottom: 15px;
+    margin-top: 10px;
 }
 
-.basket-icon:hover{
+.icon:hover{
     cursor: pointer;
 }

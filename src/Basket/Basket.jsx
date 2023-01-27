@@ -4,6 +4,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { TiTimes } from "react-icons/ti";
 import { FaCcMastercard, FaCcVisa, FaCcPaypal } from "react-icons/fa";
 import Api from "../utils/Api";
+import Navbar from "../components/Navbar";
 import Footer from "../Footer/Footer";
 
 const Basket = () => {
@@ -49,7 +50,6 @@ const Basket = () => {
           if (item.count <= 1) {
             item.count = 1;
 
-
           }
         }
       }
@@ -64,6 +64,7 @@ const Basket = () => {
 
   return (
     <>
+    <Navbar />
       <div className="basket-container">
         <h2>
           <span>Basket</span>

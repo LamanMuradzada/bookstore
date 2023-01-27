@@ -1,5 +1,4 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
 import HomePage from "./HomePage/HomePage";
 import { Route, Routes } from "react-router-dom";
 import Books from "./Pages/Books/Books";
@@ -11,13 +10,12 @@ import History from "./Books/History/History";
 import BookDetails from "./BookDetails/BookDetails";
 import SearchResult from "./SearchForm/SearchResult/SearchResult";
 import Basket from "./Basket/Basket";
+import Login from "./Pages/LogIn/Login";
 
 function App() {
   return (
     <div className="wrapper">
-     
-        <Navbar />
-     
+
       <Routes>
         <Route path="/" element={<HomePage />} />
 
@@ -34,9 +32,10 @@ function App() {
 
         <Route path="/result/:bookName" element={<SearchResult />} />
 
-        <Route path="/basket" element={<Basket />}/>
-      </Routes>
+        <Route path="/basket" element={<Basket />} />
 
+        <Route path="/login" element={<Login />}/>
+      </Routes>
     </div>
   );
 }

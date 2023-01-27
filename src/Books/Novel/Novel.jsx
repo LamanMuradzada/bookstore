@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import Api from "../../utils/Api";
 // import "../books.css";
 import "../../MainStyle/mainStyle.css";
+import Navbar from "../../components/Navbar";
 import Search from "../../SearchForm/Search";
 import Footer from "../../Footer/Footer";
 import { Link } from "react-router-dom";
@@ -32,6 +33,7 @@ const Novel = () => {
   };
   return (
     <>
+    <Navbar />
       <Search />
       <div className="title">
         <h5>Novel</h5>

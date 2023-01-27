@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./result.css";
 import icon from '../../Cart-icons/icons';
-
+import Navbar from "../../components/Navbar";
 import Api from "../../utils/Api";
 import Footer from "../../Footer/Footer";
 import Search from "../Search";
@@ -41,6 +41,7 @@ const SearchResult = () => {
 
   return (
     <>
+    <Navbar />
       <Search />
       <div className={books.newFilter?.length > 1 ? "all-result" : "one-result"}>
        {books?.newFilter?.length === 0 && <div>Book not found.</div>}

@@ -1,5 +1,6 @@
 import React from "react";
 import "./contact.css";
+import Navbar from "../../components/Navbar";
 import Footer from "../../Footer/Footer";
 import image from "./image/contact2.jpg";
 import info from "./ContactData/info";
@@ -7,6 +8,7 @@ import info from "./ContactData/info";
 const Contact = () => {
   return (
     <>
+      <Navbar />
       <div className="contact">
         <div className="header">
           <div className="header-text">

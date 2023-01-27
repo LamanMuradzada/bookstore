@@ -2,12 +2,14 @@ import React from "react";
 import data from "../OptionsData/optionsData";
 import "./books.css";
 import Search from "../../SearchForm/Search";
+import Navbar from "../../components/Navbar";
 import Footer from "../../Footer/Footer";
 import { Link } from "react-router-dom";
 
 const Books = () => {
   return (
     <>
+      <Navbar />
       <Search />
       <div>
        
