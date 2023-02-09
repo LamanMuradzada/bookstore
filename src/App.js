@@ -11,6 +11,7 @@ import BookDetails from "./BookDetails/BookDetails";
 import SearchResult from "./SearchForm/SearchResult/SearchResult";
 import Basket from "./Basket/Basket";
 import Login from "./Pages/LogIn/Login";
+import Register from "./Pages/Register/Register";
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
         <Route path="/basket" element={<Basket />} />
 
         <Route path="/login" element={<Login />}/>
+
+        <Route path="/signup" element={<Register />} />
       </Routes>
     </div>
   );
